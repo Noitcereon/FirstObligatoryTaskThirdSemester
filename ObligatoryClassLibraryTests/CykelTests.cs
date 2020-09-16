@@ -9,58 +9,58 @@ namespace ObligatoryClassLibraryTests
     [TestClass()]
     public class CykelTests
     {
-        private static readonly Cykel _cykel = new Cykel(1, "Rd", (decimal)2499.95, 7);
+        private static readonly Cykel Cykel = new Cykel(1, "Rd", (decimal)2499.95, 7);
 
         [TestInitialize]
         public void Init()
         {
-            _cykel.Id = 1;
-            _cykel.Farve = "Rd";
-            _cykel.Pris = 2499;
-            _cykel.Gear = 7;
+            Cykel.Id = 1;
+            Cykel.Farve = "Rd";
+            Cykel.Pris = 2499;
+            Cykel.Gear = 7;
         }
 
         [TestMethod()]
         public void IdTest()
         {
-            Assert.IsInstanceOfType(_cykel.Id, typeof(int), "Invalid type for Cykel.Id");
+            Assert.IsInstanceOfType(Cykel.Id, typeof(int), "Invalid type for Cykel.Id");
         }
 
         [TestMethod]
         public void FarveTest()
         {
-            Assert.IsInstanceOfType(_cykel.Farve, typeof(string), "Invalid type for Cykel.Farve");
+            Assert.IsInstanceOfType(Cykel.Farve, typeof(string), "Invalid type for Cykel.Farve");
 
-            Assert.AreEqual(2, _cykel.Farve.Length);
+            Assert.AreEqual(2, Cykel.Farve.Length);
 
-            Assert.ThrowsException<ArgumentOutOfRangeException>(() => _cykel.Farve = "T");
+            Assert.ThrowsException<ArgumentOutOfRangeException>(() => Cykel.Farve = "T");
         }
 
         [TestMethod]
         public void PrisTest()
         {
-            Assert.AreEqual(2499, _cykel.Pris);
+            Assert.AreEqual(2499, Cykel.Pris);
 
-            _cykel.Pris = 0;
-            Assert.AreEqual(0, _cykel.Pris);
+            Cykel.Pris = 0;
+            Assert.AreEqual(0, Cykel.Pris);
 
-            Assert.ThrowsException<ArgumentOutOfRangeException>(() => _cykel.Pris = -1);
+            Assert.ThrowsException<ArgumentOutOfRangeException>(() => Cykel.Pris = -1);
         }
 
         [TestMethod]
         public void GearTest()
         {
-            Assert.AreEqual(7, _cykel.Gear);
+            Assert.AreEqual(7, Cykel.Gear);
 
-            _cykel.Gear = 3;
-            Assert.AreEqual(3, _cykel.Gear);
+            Cykel.Gear = 3;
+            Assert.AreEqual(3, Cykel.Gear);
 
-            _cykel.Gear = 32;
-            Assert.AreEqual(32, _cykel.Gear);
+            Cykel.Gear = 32;
+            Assert.AreEqual(32, Cykel.Gear);
 
-            Assert.ThrowsException<ArgumentOutOfRangeException>(() => _cykel.Gear = 2);
+            Assert.ThrowsException<ArgumentOutOfRangeException>(() => Cykel.Gear = 2);
 
-            Assert.ThrowsException<ArgumentOutOfRangeException>(() => _cykel.Gear = 33);
+            Assert.ThrowsException<ArgumentOutOfRangeException>(() => Cykel.Gear = 33);
         }
     }
 }
