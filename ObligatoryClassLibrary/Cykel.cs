@@ -11,7 +11,10 @@ namespace ObligatoryClassLibrary
         private decimal _pris;
         private int _gear;
 
-        public Cykel() { }
+        public Cykel()
+        {
+
+        }
         public Cykel(int id, string farve, decimal pris, int gear)
         {
             Id = id;
@@ -51,7 +54,7 @@ namespace ObligatoryClassLibrary
             get => _gear;
             set
             {
-                if(value > 32 || value < 3) { throw new ArgumentOutOfRangeException("_gear", "_gear must be no less than 3 and no more than 32."); }
+                if(value > 32 || value < 3) { throw new ArgumentOutOfRangeException("_gear must be no less than 3 and no more than 32."); }
                 _gear = value;
             }
         }
