@@ -61,7 +61,7 @@ namespace ObligatoryClassLibrary
 
         public override string ToString()
         {
-            return $"{Id}, {Gear}, {Farve}, {Pris}";
+            return $"Id: {Id}, Farve: {Farve}, Gear: {Gear}, Pris: {Pris}";
         }
     }
 }
